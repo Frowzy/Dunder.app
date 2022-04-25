@@ -1,0 +1,97 @@
+{
+    "general":
+    {
+        "enableHWSync": { "value":true },
+        "enableFactoryFeatures": {"value": false},
+        "defaultCameraSet": { "value": ["frontColorStream", "frontIRStream"]}
+    },
+    "PreSetupConfig":
+    {
+        "backColorStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{ "value":4,
+                "description": "Optional. If this does not exist then use the default formatIndex" },
+            "enablePrimaryScalar": { "value": true },
+            "enableSecondaryScalar": { "value": false },
+            "enableStillImageOutput": { "value": false },
+            "primaryScalarConfig":
+            {
+                "width":{ "value":1920 },
+                "height":{ "value":1080 },
+                "additionalRetainedBufferCount":{ "value":6 },
+                "attachRaw":{ "value":true },
+                "pixelFormat":{ "value":"pixelFormat420YpCbCr8BiPlanarVideoRange",
+                    "description":["available values: ",
+                        "pixelFormat420YpCbCr8BiPlanarVideoRange", "pixelFormat420YpCbCr8BiPlanarFullRange",
+                        "pixelFormat422YpCbCr8_yuvs", "pixelFormat422YpCbCr8FullRange"
+                    ] }
+            }
+        },
+        "frontColorStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{ "value":8,
+                "description": "Optional. If this does not exist then use the default formatIndex" },
+            "enablePrimaryScalar": { "value": true },
+            "enableSecondaryScalar": { "value": false },
+            "enableStillImageOutput": { "value": false },
+            "primaryScalarConfig":
+            {
+                "width":{ "value":1920 },
+                "height":{ "value":1080 },
+                "additionalRetainedBufferCount":{ "value":10 },
+                "attachRaw":{ "value":true },
+                "pixelFormat":{ "value":"pixelFormat420YpCbCr8BiPlanarVideoRange",
+                    "description":["available values: ",
+                        "pixelFormat420YpCbCr8BiPlanarVideoRange", "pixelFormat420YpCbCr8BiPlanarFullRange",
+                        "pixelFormat422YpCbCr8_yuvs", "pixelFormat422YpCbCr8FullRange"
+                    ] }
+            }
+        },
+        "frontIRStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{ "value":0,
+                "description": "Optional. If this does not exist then use the default formatIndex" },
+            "enablePrimaryScalar": { "value": true },
+            "enableSecondaryScalar": { "value": false },
+            "enableStillImageOutput": { "value": false },
+            "primaryScalarConfig":
+            {
+                "width":{ "value":1104 },
+                "height":{ "value":1312 },
+                "additionalRetainedBufferCount":{ "value":12 },
+                "attachRaw":{ "value":true },
+                "shouldConfigureFormat":{ "value":true },
+                "pixelFormat":{ "value":"pixelFormatL010",
+                    "description":["available values: ",
+                        "pixelFormat420YpCbCr8BiPlanarVideoRange", "pixelFormat420YpCbCr8BiPlanarFullRange",
+                        "pixelFormat422YpCbCr8_yuvs", "pixelFormat422YpCbCr8FullRange"
+                    ] }
+            }
+        }
+    },
+    "streamPostConfig":
+    {
+        "backColorStream":
+        {
+            "minFrameRate": { "value":60 },
+            "maxFrameRate": { "value":60 },
+            "maxIntegrationTime": { "value":16 },
+            "enableFaceDetection": { "value":true }
+        },
+        "frontColorStream":
+        {
+            "minFrameRate": { "value":15 },
+            "maxFrameRate": { "value":15 },
+            "maxIntegrationTime": { "value":16 },
+            "enableFaceDetection": { "value":true }
+        },
+        "frontIRStream":
+        {
+            "minFrameRate": { "value":15 },
+            "maxFrameRate": { "value":15 }
+        }
+    }
+}

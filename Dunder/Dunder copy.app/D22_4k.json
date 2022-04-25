@@ -1,0 +1,153 @@
+{
+    "general":
+    {
+        "enableSync": { "value":true },
+        "defaultCameraSet": { "value":"frontCamera"}
+    },
+    "frontCamera":
+    {
+        "masterStreamType": { "value": "frontColorStream"},
+        "slaveStreamType": { "value": "frontIRStream"}
+    },
+    "backCamera":
+    {
+        "masterStreamType": { "value": "backColorStream"},
+        "slaveStreamType": { "value": "backColorTeleStream"}
+    },
+    "customCamera":
+    {
+        "masterStreamType":{ "value": "backColorStream"}
+    },
+    
+    "streamOutputConfig":
+    {
+        "intermediateTap":
+        {
+        },
+        
+        "primaryScaler":
+        {
+            "backColorStream":
+            {
+                "width":{ "value":3840 },
+                "height":{ "value":2160 },
+                "additionalRetainedBufferCount":{ "value":6 },
+                "attachRaw":{ "value":true },
+                "pixelFormat":{ "value":"pixelFormat420YpCbCr8BiPlanarVideoRange",
+                    "description":["available values: ",
+                        "pixelFormat420YpCbCr8BiPlanarVideoRange", "pixelFormat420YpCbCr8BiPlanarFullRange",
+                        "pixelFormat422YpCbCr8_yuvs", "pixelFormat422YpCbCr8FullRange"
+                    ] }
+            },
+            "backColorTeleStream":
+            {
+                "width":{ "value":1920 },
+                "height":{ "value":1080 },
+                "additionalRetainedBufferCount":{ "value":6 },
+                "attachRaw":{ "value":true }
+            },
+            "frontColorStream":
+            {
+                "width":{ "value":1920 },
+                "height":{ "value":1080 },
+                "additionalRetainedBufferCount":{ "value":10 },
+                "attachRaw":{ "value":true },
+                "pixelFormat":{ "value":"pixelFormat420YpCbCr8BiPlanarVideoRange" }
+            },
+            "frontIRStream":
+            {
+                "additionalRetainedBufferCount":{ "value":12 },
+                "attachRaw":{ "value":true },
+                "pixelFormat":{ "value":"pixelFormatL010" }
+            }
+        },
+        
+        "secondaryScaler":
+        {
+        },
+        
+        "stillImage":
+        {
+        },
+        
+        "depth":
+        {
+        }
+    },
+    
+    "streamPostConfig":
+    {
+        "backColorStream":
+        {
+            "minFrameRate": { "value":30 },
+            "maxFrameRate": { "value":30 },
+            "maxIntegrationTime": { "value":16 },
+            "enableFaceDetection": { "value":true }
+        },
+        "backColorTeleStream":
+        {
+            "minFrameRate": { "value":30 },
+            "maxFrameRate": { "value":30 },
+            "maxIntegrationTime": { "value":16 }
+        },
+        "backDepthStream":
+        {
+            "minFrameRate": { "value":30 },
+            "maxFrameRate": { "value":30 }
+        },
+        "frontColorStream":
+        {
+            "minFrameRate": { "value":30 },
+            "maxFrameRate": { "value":30 },
+            "maxIntegrationTime": { "value":16 },
+            "enableFaceDetection": { "value":true }
+        },
+        "frontIRStream":
+        {
+            "minFrameRate": { "value":30 },
+            "maxFrameRate": { "value":30 }
+        },
+        "frontDepthStream":
+        {
+            "minFrameRate": { "value":30 },
+            "maxFrameRate": { "value":30 }
+        }
+    },
+    
+    "outputFormat":
+    {
+        "backColorStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{"value":4}
+        },
+        "backColorTeleStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{"value":6}
+        },
+        "backDepthStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{"value":5}
+        },
+        "frontColorStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{"value":4}
+        },
+        "frontIRStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{"value":0}
+        },
+        "frontDepthStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{"value":5}
+        },
+        "enablePrimaryScaler":    { "value":true },
+        "enableStillImage":     { "value":false },
+        "enableDepth":             { "value":false }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "general":
+    {
+        "enableHWSync": { "value":false },
+        "enableFactoryFeatures": {"value": true},
+        "defaultCameraSet": { "value": ["frontColorStream"]}
+    },
+    "PreSetupConfig":
+    {
+        "frontColorStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{"value":0},
+            "enablePrimaryScalar": { "value": true },
+            "enableSecondaryScalar": { "value": false },
+            "enableStillImageOutput": { "value": false },
+            "primaryScalarConfig":
+            {
+                "width": { "value" : 2016 },
+                "height": { "value" : 1512 },
+                "additionalRetainedBufferCount":{ "value":10 },
+                "attachRaw":{ "value":true },
+                "pixelFormat":{ "value":"pixelFormat420YpCbCr8BiPlanarVideoRange" }
+            }
+        }
+    },
+    "streamPostConfig":
+    {
+        "frontColorStream":
+        {
+            "minFrameRate": { "value":30 },
+            "maxFrameRate": { "value":30 },
+            "enableFaceDetection": { "value":true }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "general":
+    {
+        "enableHWSync": { "value":false },
+        "enableFactoryFeatures": {"value": false},
+        "defaultCameraSet": { "value": ["backColorStream"]}
+    },
+    "PreSetupConfig":
+    {
+        "backColorStream":
+        {
+            "shouldConfigureFormat":{ "value":true },
+            "formatIndex":{ "value":7 },
+            "enablePrimaryScalar": { "value": true },
+            "enableSecondaryScalar": { "value": false },
+            "enableStillImageOutput": { "value": false },
+            "primaryScalarConfig":
+            {
+                "width":{ "value":1920 },
+                "height":{ "value":1080 },
+                "additionalRetainedBufferCount":{ "value":24 },
+                "attachRaw":{ "value":true },
+                "pixelFormat":{ "value":"pixelFormat420YpCbCr8BiPlanarVideoRange",
+                    "description":["available values: ",
+                        "pixelFormat420YpCbCr8BiPlanarVideoRange", "pixelFormat420YpCbCr8BiPlanarFullRange",
+                        "pixelFormat422YpCbCr8_yuvs", "pixelFormat422YpCbCr8FullRange"
+                    ] }
+            }
+        }
+    },
+    "streamPostConfig":
+    {
+        "backColorStream":
+        {
+            "minFrameRate": { "value":30 },
+            "maxFrameRate": { "value":30 },
+            "maxIntegrationTime": { "value":16 },
+            "enableFaceDetection": { "value":true }
+        }
+    }
+}
